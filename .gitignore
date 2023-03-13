@@ -1,0 +1,6 @@
+venv/
+__pycache__
+.venv/
+steps.txt
+readme.md
+.keep
