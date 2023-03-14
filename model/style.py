@@ -3,7 +3,7 @@ from main import db
 
 
 
-class Style_Model(db.Model):
+class Style(db.Model):
     ___tablename__ = "style"
 
     style_id = db.Column(db.Integer(), primary_key=True) 

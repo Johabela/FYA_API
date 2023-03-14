@@ -1,14 +1,13 @@
 from main import ma 
-from model.studio import Studio_Model
-from marshmallow import EXCLUDE
 
 
 
 class StudioSchema(ma.Schema):
     class Meta: 
-        fields = ("id", "studio_name",  "description", 
-                  "website")
-      
+        fields = ("id", "studio_name", "description", 
+                  "website", "artists")
+
+    artist = ma.List(ma.Nested("ArtistSchema", exclude=("user",)))
 
 studio_schema = StudioSchema()
 studios_schema = StudioSchema(many=True)

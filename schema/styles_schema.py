@@ -1,5 +1,5 @@
 from main import ma 
-from model.style import Style_Model
+from model.style import Style
 
 # the code didn't have the below line, pay attention
 from marshmallow import EXCLUDE
