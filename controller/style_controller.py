@@ -23,15 +23,15 @@ def get_style(style_id):
 
 @bp_style.route("/", methods=["POST"])
 def create_style():
-    try: 
-        style_fields = style_schema.load(request.json)
-        style = Style(**style_fields)
+    # try: 
+    style_fields = style_schema.load(request.json)
+    style = Style(**style_fields)
 
-        db.session.add(style)
-        db.session.commit()
+    db.session.add(style)
+    db.session.commit()
     
-    except: 
-        return {"message": " This style already exists " }
+    # except: 
+    #     return {"message": " This style already exists " }
     
     return style_schema.dump(style)
 

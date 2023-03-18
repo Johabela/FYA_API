@@ -1,17 +1,17 @@
 from main import ma 
-from flask_marshmallow import Marshmallow
 
 
 class ArtistSchema(ma.Schema):
     class Meta: 
         fields = ("id", "artist_name", "verified",  "description", 
-                  "work_agreement", "url_instagram", "studio_id" )
+                  "work_agreement", "url_instagram", "studio", "studio_id", "years_of_practice"  )
         
-        # load_only = ["studio_id"]
-        
+        load_only = ["studio_id"]
+            
 
-    # composite schema  - > display information of studio 
+    # composite schema  - > display studio information 
     studio = ma.Nested("StudioSchema")
+    
 
         
 artist_schema = ArtistSchema()

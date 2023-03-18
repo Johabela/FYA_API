@@ -5,9 +5,10 @@ from main import ma
 class StudioSchema(ma.Schema):
     class Meta: 
         fields = ("id", "studio_name", "description", 
-                  "website", "artists")
+                  "website", "artist")
 
-    artist = ma.List(ma.Nested("ArtistSchema", exclude=("user",)))
+
+    artist = ma.List(ma.Nested("ArtistSchema", exclude=("studio",)))
 
 studio_schema = StudioSchema()
 studios_schema = StudioSchema(many=True)

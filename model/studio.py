@@ -11,10 +11,10 @@ class Studio(db.Model):
     website = db.Column(db.String())
 
 
-    artist = db.relationship("Artist", backref="artists", lazy=True)
+    artist = db.relationship("Artist", backref="artist", lazy=True)
 
 
-    # artist = db.relationship('Artist', backref="artists", lazy=True, uselist=False)
+    # artist = db.relationship('Artist', backref="artist", lazy=True, uselist=False)
 
 
 

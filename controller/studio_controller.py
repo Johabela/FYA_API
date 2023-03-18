@@ -25,17 +25,17 @@ def get_studio(id):
 
 @bp_studio.route("/", methods=["POST"])
 def create_studio():
-    try: 
-        studio_fields = studio_schema.load(request.json)
-        studio = Studio(**studio_fields)
+    # try: 
+    studio_fields = studio_schema.load(request.json)
+    studio = Studio(**studio_fields)
 
 
-        db.session.add(studio)
+    db.session.add(studio)
       
-        db.session.commit()
+    db.session.commit()
         
-    except: 
-        return {"message": " This studio already exists " }
+    # except: 
+    #     return {"message": " This studio already exists " }
     
     return studio_schema.dump(studio)
 

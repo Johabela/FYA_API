@@ -1,4 +1,3 @@
-
 from main import db
 
 
@@ -15,6 +14,12 @@ class Artist(db.Model):
     work_agreement = db.Column(db.String())
     url_instagram = db.Column(db.String ())
 
+
     studio_id = db.Column(db.Integer, db.ForeignKey("studio.id"), nullable=False)
   
     studio = db.relationship("Studio", backref="artists")
+
+    artist_style = db.relationship("ArtistStyle", backref="artist")
+    
+
+  
