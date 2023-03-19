@@ -1,20 +1,19 @@
 from main import ma 
-from model.style import Style
 
-# the code didn't have the below line, pay attention
-from marshmallow import EXCLUDE
-
-
-
+#creating the Schema with Marshmallow 
 class StyleSchema(ma.Schema):
     class Meta: 
-        fields = ("id", "style_name",  "description", "artist_style", "artist_style_id")
+        fields = ("id", "style_name",  "description", "artist_style")
 
-        load_only =["artist_style_id"]
+        load_only =["style_id"]
     
-    artist_style = ma.Nested("ArtistStyleSchema")
-
+   
+    artist_style = ma.Nested("ArtistStyle")
+   
+#single schema 
 style_schema = StyleSchema()
+
+#Multiple schema 
 styles_schema = StyleSchema(many=True)
 
 

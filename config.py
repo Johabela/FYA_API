@@ -8,7 +8,7 @@ class Config(object):
         db_url = os.environ.get("DATABASE_URL")
 
         if not db_url:
-            raise ValueError("DATABASE_URL is not set") #-> 
+            raise ValueError("DATABASE_URL is not set") 
 
         return db_url
 
@@ -17,7 +17,6 @@ class DevelopmentConfig(Config):
     
 class ProductionConfig(Config):
     pass
-
 
 environment = os.environ.get("FLASK_DEBUG")
 

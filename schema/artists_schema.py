@@ -4,7 +4,7 @@ from main import ma
 class ArtistSchema(ma.Schema):
     class Meta: 
         fields = ("id", "artist_name", "verified",  "description", 
-                  "work_agreement", "url_instagram", "studio", "studio_id", "years_of_practice"  )
+                  "work_agreement", "url_instagram", "studio", "studio_id"  )
         
         load_only = ["studio_id"]
             

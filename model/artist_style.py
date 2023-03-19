@@ -1,18 +1,19 @@
-
 from main import db
 
 
 
 class ArtistStyle(db.Model):
-    ___tablename__ = "artist_style"
+    ___tablename__ = "artist_style" #-> Table name artist_style 
 
+
+    # Artist_style primary key 
     id = db.Column(db.Integer(), primary_key=True) 
 
+    # Artist_style attribute
     years_of_practice = db.Column(db.Integer())
  
 
-# Getting artist FK and styles FK
-
+    # Getting artist FK and styles FK
     artist_id = db.Column(db.Integer, db.ForeignKey("artist.id"), nullable=False)
     style_id = db.Column(db.Integer, db.ForeignKey("style.id"), nullable=False)
 
@@ -28,14 +29,3 @@ class ArtistStyle(db.Model):
 
 
 
-
-
-
-
-
-
-
-
-  
-    # artist = db.relationship("Artist", backref="artist_style")
-    # style = db.relationship("Style", backref="artist_style")
